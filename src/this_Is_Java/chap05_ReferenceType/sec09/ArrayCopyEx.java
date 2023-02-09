@@ -1,4 +1,4 @@
-package this_Is_Java.chap05_ReferenceType.sec09;
+package chap05_ReferenceType.sec09;
 //*배열 복사
 public class ArrayCopyEx {
 

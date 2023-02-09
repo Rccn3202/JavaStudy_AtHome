@@ -1,4 +1,4 @@
-package this_Is_Java.chap05_ReferenceType.sec06;
+package chap05_ReferenceType.sec06;
 //*배열길이 : 배열변수.length;
 public class ArrayLengthEx {
 

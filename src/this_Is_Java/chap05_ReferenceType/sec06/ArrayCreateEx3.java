@@ -1,4 +1,4 @@
-package this_Is_Java.chap05_ReferenceType.sec06;
+package chap05_ReferenceType.sec06;
 
 //*값 목록은 없지만 나중에 값을 저장할 목적으로 배열 미리 생성하기(길이 미리 지정) : 타입[] 변수=new 타입[길이]
 public class ArrayCreateEx3 {

@@ -1,4 +1,4 @@
-package this_Is_Java.chap05_ReferenceType.sec10;
+package chap05_ReferenceType.sec10;
 
 public class AdvancedForEx {
 

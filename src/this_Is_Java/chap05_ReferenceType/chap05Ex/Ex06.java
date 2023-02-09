@@ -1,4 +1,4 @@
-package this_Is_Java.chap05_ReferenceType.chap05Ex;
+package chap05_ReferenceType.chap05Ex;
 //!!! 다중배열 공부 후 풀어보기
 public class Ex06 {
 

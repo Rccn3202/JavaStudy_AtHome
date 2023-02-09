@@ -1,4 +1,4 @@
-package this_Is_Java.chap05_ReferenceType.chap05Ex;
+package chap05_ReferenceType.chap05Ex;
 
 import java.util.Scanner;
 

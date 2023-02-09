@@ -1,4 +1,4 @@
-package this_Is_Java.chap05_ReferenceType.sec08;
+package chap05_ReferenceType.sec08;
 //*객체를 참조하는 배열
 //String[] str=new String[3];  :  힙에 String 3칸짜리 배열을 생성, 스택에 str을 생성하고 힙String의 주소를 저장 
 public class ArrayReferenceObjectEx {
