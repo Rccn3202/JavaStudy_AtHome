@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package this_Is_Java.chap05_ReferenceType.sec06;
+=======
+package chap05_ReferenceType.sec06;
+>>>>>>> 9dec55382eab39418e6e6a38b63341a2396558b2
 
 public class ArrayCreateEx2 {
 	//*배열 변수를 선언한 시점과 값 목록이 대입되는 시점이 다르다면 new 타입[]를 앞에 붙여준다. 

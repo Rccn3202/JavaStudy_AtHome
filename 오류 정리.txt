@@ -1,0 +1,11 @@
+이클립스 
+
+한글파일 깨짐
+https://sayit.tistory.com/entry/UTF8-for-Eclipse
+
+
+깃
+Git push 안됨
+error: failed to push some refs to '주소'
+fatal:refusing to merge unrelated histories
+

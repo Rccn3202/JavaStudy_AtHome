@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package this_Is_Java.chap05_ReferenceType.chap05Ex;
+=======
+package chap05_ReferenceType.chap05Ex;
+>>>>>>> 9dec55382eab39418e6e6a38b63341a2396558b2
 
 import java.util.Scanner;
 
