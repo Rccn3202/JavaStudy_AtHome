@@ -1,5 +1,5 @@
 package chap15_Collection.sec02;
-
+//ArrayList와 LinkedList 저장 시간 비교
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

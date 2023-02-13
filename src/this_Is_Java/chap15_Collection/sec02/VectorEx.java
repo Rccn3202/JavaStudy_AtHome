@@ -1,5 +1,6 @@
 package chap15_Collection.sec02;
-
+//Vector 컬렉션은 ArrayList와 달리 두 스레드가 동시에 add()메소드를 호출해도 경합 발생하지 않고 모두 저장 가능하다
+//Vector의 add()메소드는 동기화 메소드이므로 한 번에 하나의 스레드만 실행 가능함
 import java.util.List;
 import java.util.Vector;
 

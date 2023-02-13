@@ -1,5 +1,5 @@
 package chap15_Collection.sec02;
-
+//ArrayList 컬렉션 생성/객체추가/객체수/특정 객체 가져오기/모든 객체 출력(for,향상된 for)/객체 삭제
 import java.util.ArrayList;
 import java.util.List;
 
