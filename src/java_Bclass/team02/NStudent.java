@@ -1,14 +1,14 @@
 package java_Bclass.team02;
 
-public class NO {
-
+public class NStudent {
 	private String studentName; //이름
 	private int kor; //국어 점수
 	private int eng;	//영어 점수
 	private int math;	//수학 점수
 	private String school;	//학교
 	
-	public NO(String studentName, int kor, int eng, int math, String school) {
+	
+	public NStudent() {
 		super();
 		this.studentName = studentName;
 		this.kor = kor;
@@ -17,6 +17,8 @@ public class NO {
 		this.school = school;
 	}
 	
+
+
 	public String getStudentName() {
 		return studentName;
 	}
@@ -47,4 +49,6 @@ public class NO {
 	public void setSchool(String school) {
 		this.school = school;
 	}
+	
+	
 }
