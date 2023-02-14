@@ -29,7 +29,12 @@ public class Method {
 			System.out.println("정보삭제---------------");
 			System.out.println("학생 이름> ");
 			String name=sc.nextLine();
-			System.out.println(list2.remove());
+			if (list2.contains(name)) {
+	            System.out.println("Removed string: " + name);
+	            list2.remove(name);
+	        } else {
+	            System.out.println("String not found.");
+	        }
 		}//end remove
 		
 		public void fix() {  //정보 수정 메소드

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NoList {
+	
+	 public static void main(String[] args) {
 	List<NO> list=new ArrayList<>();
     
     //내 담당 아님
@@ -11,4 +13,5 @@ public class NoList {
 	list.add(new NO("이",90,60,20,"ㅇㅇ고"));
 	list.add(new NO("박",30,50,70,"ㅇㅇ고"));
     //여기까지
+}
 }

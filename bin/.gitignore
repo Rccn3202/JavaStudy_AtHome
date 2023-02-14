@@ -1,22 +1,9 @@
 /.classpath
 /.project
 /A.class
-<<<<<<< HEAD
-/blog_Ex/
-/chap05_ReferenceType/
-/chap06_Class/
-/chap07_Inheritance/
-/chap08_Interface/
-/chap09_NestedClassNAnonymous/
-/self_Java/
-/team_Project/
-/youtube_LifeCoding/
-/chap11_Exception/
-/sec01/
 /Info.class
+/Other/
 /a/
-=======
-/Info.class
 /chap05_ReferenceType/
 /chap06_Class/
 /chap07_Inheriance/
@@ -24,11 +11,7 @@
 /chap09_NestedClassNAnonymous/
 /chap11_Exception/
 /chap12_javabaseModules/
-/youtube_LifeCoding/
 /chap15_Collection/
-/Other/
->>>>>>> 9dec55382eab39418e6e6a38b63341a2396558b2
-/JavaB_Class/
 /java_Bclass/
-/Private/
 /personal/
+/youtube_LifeCoding/
