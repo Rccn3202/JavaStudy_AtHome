@@ -63,4 +63,5 @@ public class Student {
 	        return "이름 : " + this.getName() + " 국어 : " + this.getKor() + " 영어 : " + this.getEng() + " 수학 : "
 	                + this.getMath() + " 총점 : " + this.getTotal() + " 평균 : " + this.getAvg() + "\n";
 	    }
-}
+	}
+
