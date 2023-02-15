@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Grade {
+public class DeleteNFix {
 	LinkedList<Student> list = new LinkedList<Student>();
     Iterator<Student> it = list.iterator();
     Student stu;
@@ -82,7 +82,6 @@ public class Grade {
     				while(accessOK) {
     					String yn=sc.next();
 
-    					//~~가 삭제되었습니다 쓸까??
     					if(yn.equalsIgnoreCase("y")) {
     						for(int i=1;i<=3;i++) {
     						System.out.println("관리자 번호를 입력하세요");
@@ -90,7 +89,7 @@ public class Grade {
 							
     							if(password.equals("1234")) {
     								list.remove(stu);
-    								System.out.println("삭제되었습니다"); 
+    								System.out.println(stu.getName()+"이 삭제되었습니다"); 
     								accessOK=false; break;
 	
     							}else {//만약에 1234가 아니면
@@ -102,8 +101,8 @@ public class Grade {
     						}
 
     					}else if(yn.equalsIgnoreCase("n")) {
-    						System.out.println("프로그램 종료");
-    						System.exit(0); //???
+    						System.out.println("프로그램 종료"); accessOK=false;
+    						
     					}else {
     						System.out.println("다시 입력");		}
     				}	
