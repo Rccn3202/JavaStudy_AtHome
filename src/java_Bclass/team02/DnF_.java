@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class DeleteNFix {
+public class DnF_ {
 	LinkedList<Student> list = new LinkedList<Student>();
     Iterator<Student> it = list.iterator();
     Student stu;
@@ -22,23 +22,9 @@ public class DeleteNFix {
  
     public void output() {
         for (Student stu : list) {
-            System.out.println(stu); //toString()함수 호출
+            System.out.println(stu);
         }
     }
- 
-    public void search() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("이름 검색 : ");
-        String n = sc.next();
-        it = list.iterator(); //위에 선언한 iterator을 불러옴
-        while (it.hasNext()) { //찾을 떄까지 넘김
-            Student stu = it.next();
-            if (stu.getName().equals(n)) { //입력한 n이 같으면
-                System.out.println(stu); //n이 들어있는 list 호출
-            }
-        }
-    }
- 
     public void fix() {
         Scanner sc = new Scanner(System.in);
         System.out.print("학생 이름 : ");
@@ -62,53 +48,53 @@ public class DeleteNFix {
             }
         }
     }
- 
+    
     public void delete() {
     	Scanner sc = new Scanner(System.in);
     	boolean accessOK=true;
     	System.out.println("<<정보 삭제>>");
-    	if (stu == null) { 
+    	
+    	if (stu == null) { 										//1-학생 정보 없을 때
     		System.out.println("삭제할 내역이 없습니다");
-    	} else {
+    	} else {												//1-학생 정보 있을 때
     		System.out.print("삭제 할 학생명> ");
-    		String n = sc.next();
+    		String name = sc.next();
     		it = list.iterator();
     		while(it.hasNext()) {
-    			Student stu=it.next();
-    			
-    			if(stu.getName().equals(n)) {
-    				System.out.println("정말 삭제?");
+    			Student stu=it.next();							//2-학생 검색
+ 
+    			if(stu.getName().equals(name)) {				//3-일치하는 이름 있을 때
     				while(accessOK) {
+    					System.out.println("정말 삭제?");
     					String yn=sc.next();
 
-    					if(yn.equalsIgnoreCase("y")) {
+    					if(yn.equalsIgnoreCase("y")) {			//4-y입력
     						for(int i=1;i<=3;i++) {
     						System.out.println("관리자 번호를 입력하세요");
 							String password=sc.next();
 							
-    							if(password.equals("1234")) {
+    							if(password.equals("1234")) {	//5-번호 잘 입력됨
     								list.remove(stu);
     								System.out.println(stu.getName()+"이 삭제되었습니다"); 
     								accessOK=false; break;
 	
-    							}else {//만약에 1234가 아니면
-    								
-    								if(i==3) {
+    							}else {							//5-번호 틀림
+    								if(i==3) {					//6-3번 틀림
     									System.out.println("접속거부"); accessOK=false;
-    								}else System.out.println("비번 틀렸음"+(3-i)+"회 남음 다시입력"); 
+    								}else System.out.println("비번 틀렸음"+(3-i)+"회 남음 다시입력"); 	//6-n(n<3) 틀림
     							} 
     						}
 
-    					}else if(yn.equalsIgnoreCase("n")) {
+    					}else if(yn.equalsIgnoreCase("n")) {	////4-n입력
     						System.out.println("프로그램 종료"); accessOK=false;
     						
-    					}else {
-    						System.out.println("다시 입력");		}
+    					}else { System.out.println("다시 입력");		}
     				}	
-    			}else System.out.println("해당 학생이 없음");
+    			}else System.out.println("해당 학생이 없음"); break; ////3-일치하는 이름 없을 때
     		}
     	}
     }//delete
 }//DnF
+    
     
 
