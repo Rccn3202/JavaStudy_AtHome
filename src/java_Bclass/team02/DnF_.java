@@ -1,5 +1,6 @@
 package java_Bclass.team02;
 
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -28,8 +29,9 @@ public class DnF_ {
 	}
 	
 	//점수 입력시 글자 입력하면 오류남-해결 InputMismatchException try-catch
-	//이름이 같은 학생은 수정 어떻게 됨?-첫번째 학생만 수정됨/이름이 같으면 목록 나오게 할까? 1번2번 인덱스번호를 골라서 수정
-	//검색하면 이름 같은 학생 명단 출력-학교명 검색-삭제
+		//이름이 같은 학생은 수정 어떻게 됨?-첫번째 학생만 수정됨/이름이 같으면 목록 나오게 할까? 1번2번 인덱스번호를 골라서 수정
+		//검색하면 이름 같은 학생 명단 출력-학교명 검색-삭제
+		//indexOf????
 	public void fix() {
 		Scanner sc = new Scanner(System.in);
 		if (stu==null) {	System.out.println("수정할 내역이 없습니다");}	//1-학생 없으면			
@@ -40,8 +42,15 @@ public class DnF_ {
 			it = list.iterator();
 			while (it.hasNext()) {					//2-학생 검색
 				Student stu = it.next();
-				try {								//예외처리
-					if (stu.getName().equals(name)) { 	//3-일치하는 이름 있을 때
+				try {		//예외처리	
+					
+					if (stu.getName().equals(name)) { //3-일치하는 이름 있을 때 (Student st : list)
+						  System.out.println(stu.getName().equals(name));
+						
+						
+						
+						
+
 						System.out.print("과목선택 : 1.국어  2.영어 ");
 						int subject = sc.nextInt();					//4-과목 선택
 						///////////이거 수정중 1 2 말고 다른거 누르면 잘못
@@ -59,6 +68,7 @@ public class DnF_ {
 						 }System.out.println("숫자 잘못 입력");//while
 					}//if3
 					else System.out.println("해당 학생이 없음"); break;  //3-일치하는 이름 없을 때
+					
 				}//try
 				catch(InputMismatchException e) { System.out.println("숫자만 입력하세요"); }
 			}//while
