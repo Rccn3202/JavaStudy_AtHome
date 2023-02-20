@@ -5,7 +5,7 @@ import java.util.TreeSet;
 public class TreeSetEx {
 
 	public static void main(String[] args) {
-		TreeSet<Student> treeSet = new TreeSet<Student>();
+		TreeSet<Student2> treeSet = new TreeSet<Student2>();
 		treeSet.add(new Student2("blue",96));
 		treeSet.add(new Student2("hong",86));
 		treeSet.add(new Student2("white",92));

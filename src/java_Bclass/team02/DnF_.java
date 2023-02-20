@@ -1,5 +1,6 @@
 package java_Bclass.team02;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Iterator;
@@ -7,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class DnF_ {
-	LinkedList<Student> list = new LinkedList<Student>();
+	ArrayList<Student> list = new ArrayList<Student>();
 	Iterator<Student> it = list.iterator();
 	Student stu;
 	public void input() {
@@ -19,6 +20,8 @@ public class DnF_ {
 		stu.setKor(sc.nextInt());
 		System.out.print("영어 : ");
 		stu.setEng(sc.nextInt());
+		System.out.print("학번 : ");
+		stu.setNum(sc.next());
 		list.add(stu);
 	}
 
@@ -45,15 +48,27 @@ public class DnF_ {
 				try {		//예외처리	
 					
 					if (stu.getName().equals(name)) { //3-일치하는 이름 있을 때 (Student st : list)
-						  System.out.println(stu.getName().equals(name));
+						//이름 같은 학생 있으면 명단 뜨게 만들기
+						//학번을 확인하고 학번을 입력하시오-----------------------여기부터
+						//학번 예외
 						
-						
-						
-						
+						for(int i=0; i<list.size();i++) {	//3.2-일치하는 이름 출력
+							if(name.equals(list.get(i).getName())) {
+								System.out.print(list.get(i).toString());
 
+							}
+						}//3.2 for
+						System.out.print("학번 검색 : ");
+						String name2 = sc.next();
+						if(stu.getNum().equals(name2)) {	//3-3. 학번입력
+						
+						
+						
+						
+						
 						System.out.print("과목선택 : 1.국어  2.영어 ");
 						int subject = sc.nextInt();					//4-과목 선택
-						///////////이거 수정중 1 2 말고 다른거 누르면 잘못
+						
 						while(subject !=2) {
 						switch (subject) {
 						case 1: // 국어 
@@ -65,6 +80,7 @@ public class DnF_ {
 							stu.setEng(sc.nextInt());
 							break;
 						} break; //switch
+						}//3.3
 						 }System.out.println("숫자 잘못 입력");//while
 					}//if3
 					else System.out.println("해당 학생이 없음"); break;  //3-일치하는 이름 없을 때
