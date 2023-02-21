@@ -17,6 +17,8 @@ public class DeleteNFix {
         stu.setKor(sc.nextInt());
         System.out.print("영어 : ");
         stu.setEng(sc.nextInt());
+        System.out.print("학번 : ");
+        stu.setNum(sc.next());
         list.add(stu);
     }
  
@@ -58,6 +60,7 @@ public class DeleteNFix {
                     System.out.print("영어 : ");
                     stu.setEng(sc.nextInt());
                     break;
+                    
                 }
             }
         }

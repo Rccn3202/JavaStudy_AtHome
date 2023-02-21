@@ -1,18 +1,14 @@
 package java_Bclass.team02;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 public class DnF_ {
-	ArrayList<Student> list = new ArrayList<Student>();
+	LinkedList<Student> list = new LinkedList<Student>();
 	Iterator<Student> it = list.iterator();
 	Student stu;
-	
-	
 	public void input() {
 		Scanner sc = new Scanner(System.in);
 		stu = new Student(); 
@@ -22,22 +18,16 @@ public class DnF_ {
 		stu.setKor(sc.nextInt());
 		System.out.print("영어 : ");
 		stu.setEng(sc.nextInt());
-		System.out.print("학번 : ");
-		stu.setNum(sc.next());
 		list.add(stu);
-		
 	}
 
 	public void output() {
 		for (Student stu : list) {
-			System.out.print(stu);
+			System.out.println(stu);
 		}
 	}
 	
-	//점수 입력시 글자 입력하면 오류남-해결 InputMismatchException try-catch
-		//이름이 같은 학생은 수정 어떻게 됨?-첫번째 학생만 수정됨/이름이 같으면 목록 나오게 할까? 1번2번 인덱스번호를 골라서 수정
-		//검색하면 이름 같은 학생 명단 출력-학교명 검색-삭제
-		//indexOf????
+	
 	public void fix() {
 		Scanner sc = new Scanner(System.in);
 		if (stu==null) {	System.out.println("수정할 내역이 없습니다");}	//1-학생 없으면			
@@ -48,13 +38,11 @@ public class DnF_ {
 			it = list.iterator();
 			while (it.hasNext()) {					//2-학생 검색
 				Student stu = it.next();
-				try {		//예외처리	
-					
-					if (stu.getName().equals(name)) { //3-일치하는 이름 있을 때 (Student st : list)
-
+				try {								//예외처리
+					if (stu.getName().equals(name)) { 	//3-일치하는 이름 있을 때
 						System.out.print("과목선택 : 1.국어  2.영어 ");
 						int subject = sc.nextInt();					//4-과목 선택
-						
+						///////////이거 수정중 1 2 말고 다른거 누르면 잘못
 						while(subject !=2) {
 						switch (subject) {
 						case 1: // 국어 
@@ -66,15 +54,11 @@ public class DnF_ {
 							stu.setEng(sc.nextInt());
 							break;
 						} break; //switch
-						
-						} System.out.println("숫자 잘못 입력");//while
-						
-						
+						 }System.out.println("숫자 잘못 입력");//while
 					}//if3
 					else System.out.println("해당 학생이 없음"); break;  //3-일치하는 이름 없을 때
-					
 				}//try
-				catch(InputMismatchException e) {System.err.println("숫자만 입력하세요"); }
+				catch(InputMismatchException e) { System.out.println("숫자만 입력하세요"); }
 			}//while
 		}//else1
 	}//fix
@@ -136,57 +120,3 @@ fix
 
 
 */
-/*
- * 2023.02.21
- * 오 이거 신기한데?
- * System.err.println("에러나면 빨간색 출력");
- * 종료할 때 system.exit() 쓰면??/~~를 누르면 프로그램 종료
- * 
- * 수정내용
- * 이름 같은 학생 있으면 명단 뜨게 만들기
- * 학번을 확인하고 학번을 입력하시오-----------------------여기부터/두번째 학생은 수정 안됨!!!!!!!!!!!!!!!
-						//이거 학번 확인 후 다시 입력칸으로 가게 하면 되지않
-						 * 
-						 * 
-						
- * arrayList 다중배열로 해서 같은 이름이면 같은 배열로 줄줄이 달면??
- * 
- * 
- * 
- * 문제
- * <<정보 수정>>
-학생 이름 : rla
-이름 : rla 국어 : 1 영어 : 2 수학 : 0 총점 : 3 평균 : 1.0 학번 : 4
-이름 : rla 국어 : 5 영어 : 6 수학 : 0 총점 : 11 평균 : 3.6666667 학번 : 7
-학번 검색 : 4
-과목선택 : 1.국어  2.영어 1
-국어 : 100
-숫자 잘못 입력
-
-틀린 학번 예외 추가하기
- * 
- * 
- * 
- * 
- * //이름 같은 학생 있으면 명단 뜨게 만들기
-						//학번을 확인하고 학번을 입력하시오-----------------------여기부터/두번째 학생은 수정 안됨
-						//이거 학번 확인 후 다시 입력칸으로 가게 하면 되지않
-						//배열 만들까.....
-						//학번 예외
-						
-						
-						}//3.2 for
-						System.out.print("학번 검색 : ");
-						String name2 = sc.next();
-						it=list.iterator();
-						if(stu.getNum().equals(name2)) {		//3-3. 학번입력
- * 
- * for(int i=0; i<list.size();i++) {	//3.2-일치하는 이름 출력
-							if(name.equals(list.get(i).getName())) {
-								System.out.println("학번 확인 후 학번 입력");
-								System.out.print(list.get(i).toString());
-							}
-							
-							
-							
- */
