@@ -8,11 +8,11 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class DnF_ {
-	ArrayList<Student> list = new ArrayList<Student>();
+	LinkedList<Student> list = new LinkedList<Student>();
 	Iterator<Student> it = list.iterator();
 	Student stu;
-	
-	
+
+
 	public void input() {
 		Scanner sc = new Scanner(System.in);
 		stu = new Student(); 
@@ -25,7 +25,7 @@ public class DnF_ {
 		System.out.print("학번 : ");
 		stu.setNum(sc.next());
 		list.add(stu);
-		
+
 	}
 
 	public void output() {
@@ -33,51 +33,75 @@ public class DnF_ {
 			System.out.print(stu);
 		}
 	}
-	
+
 	//점수 입력시 글자 입력하면 오류남-해결 InputMismatchException try-catch
-		//이름이 같은 학생은 수정 어떻게 됨?-첫번째 학생만 수정됨/이름이 같으면 목록 나오게 할까? 1번2번 인덱스번호를 골라서 수정
-		//검색하면 이름 같은 학생 명단 출력-학교명 검색-삭제
-		//indexOf????
+	//이름이 같은 학생은 수정 어떻게 됨?-첫번째 학생만 수정됨/이름이 같으면 목록 나오게 할까? 1번2번 인덱스번호를 골라서 수정
+	//검색하면 이름 같은 학생 명단 출력-학교명 검색-삭제
+	//indexOf????
 	public void fix() {
 		Scanner sc = new Scanner(System.in);
-		if (stu==null) {	System.out.println("수정할 내역이 없습니다");}	//1-학생 없으면			
+		if (list.isEmpty()) {	System.out.println("수정할 내역이 없습니다");}	//1-학생 없으면			
 		else {							//1-학생 있으면
 			System.out.println("<<정보 수정>>");
-			System.out.print("학생 이름 : ");
-			String name = sc.next();
+			System.out.print("이름 입력 : ");
+			String name = sc.next();	//이름입력
 			it = list.iterator();
-			while (it.hasNext()) {					//2-학생 검색
+			while (it.hasNext()) {					//2-학생 검색 값이 있는지..
 				Student stu = it.next();
-				try {		//예외처리	
-					
-					if (stu.getName().equals(name)) { //3-일치하는 이름 있을 때 (Student st : list)
+				try {		//문자를 입력할 경우예외처리	
 
-						System.out.print("과목선택 : 1.국어  2.영어 ");
-						int subject = sc.nextInt();					//4-과목 선택
-						
-						while(subject !=2) {
-						switch (subject) {
-						case 1: // 국어 
+					if (stu.getName().equals(name)) { //3-일치하는 이름 있을 때 (Student st : list)
+						System.out.println("선택 1.성적일괄수정 2.과목선택 3.이름");
+						int select = sc.nextInt();
+						switch(select) {
+						case 1 :
 							System.out.print("국어 : ");
 							stu.setKor(sc.nextInt());
-							break;
-						case 2: // 영어
 							System.out.print("영어 : ");
 							stu.setEng(sc.nextInt());
+							System.out.println("결과");
+							System.out.println(stu.toString());
 							break;
-						} break; //switch
-						
-						} System.out.println("숫자 잘못 입력");//while
-						
-						
+						case 2 :
+							System.out.println("과목선택 : 1.국어  2.영어 ");
+							int subject = sc.nextInt();					//4-과목 선택
+
+							while(subject !=2) {
+								switch (subject) {
+								case 1: // 국어 
+									System.out.print("국어 : ");
+									stu.setKor(sc.nextInt());
+									break;
+								case 2: // 영어
+									System.out.print("영어 : ");
+									stu.setEng(sc.nextInt());
+									break;
+								} break; //switch
+							}// System.out.println("숫자 잘못 입력");//while
+						case 3 :
+							System.out.print("변경할 이름: ");
+							stu.setName(sc.next());
+							System.out.println(stu.toString());
+
+						default : System.out.println("잘못된 번호 선택. 메인으로 나감");
+
+
+						}
+
+
+
+
+
 					}//if3
 					else System.out.println("해당 학생이 없음"); break;  //3-일치하는 이름 없을 때
-					
+
 				}//try
 				catch(InputMismatchException e) {System.err.println("숫자만 입력하세요"); }
 			}//while
 		}//else1
 	}//fix
+
+
 
 	public void delete() {
 		Scanner sc = new Scanner(System.in);
@@ -93,7 +117,7 @@ public class DnF_ {
 				Student stu=it.next();							//2-학생 검색
 
 				if(stu.getName().equals(name)) {				//3-일치하는 이름 있을 때
-					
+
 					while(accessOK) {
 						System.out.println("정말 삭제?");
 						String yn=sc.next();
@@ -132,38 +156,38 @@ fix
 -학생목록 없으면 '수정할 내역 없다'고 뜨게함
 -학생이름 입력 후 과목 선택시 문자를 입력하면 예외로 넘겨서 '숫자만 입력'하라고 뜨게 함
 -과목 선택시 숫자 잘못입력하면 초기화면으로 돌아감
-*문제: 학생 이름 같을 경우 삭제, 수정은 먼저 입력된 학생만 됨
+ *문제: 학생 이름 같을 경우 삭제, 수정은 먼저 입력된 학생만 됨
 
 
-*/
+ */
 /*
- * 2023.02.21
- * 오 이거 신기한데?
- * System.err.println("에러나면 빨간색 출력");
+ * 2023.02.22
+ * 정보수정 부분에서 숫자가 아닌 문자열 입력할 시 빨간색으로 '숫자만 입력하세요' 출력
+ * 정보수정 목록 추가 : 성적일괄수정/과목선택수정/이름수정
+ * 수정 후 변경된 내용 출력
+ * 
+ * 문제) 두번째로 입력한 학생은 수정 안됨
+ * 		학생 이름 같을 경우 위에것만 수정됨
+ *
+ * 추가필요) 성적점수 범위 설정
+ * 		   자꾸 변경할 이름 나옴
+ * 		
+ * 
+ * 
+ * 
  * 종료할 때 system.exit() 쓰면??/~~를 누르면 프로그램 종료
  * 
+ * 2023.02.22
  * 수정내용
  * 이름 같은 학생 있으면 명단 뜨게 만들기
  * 학번을 확인하고 학번을 입력하시오-----------------------여기부터/두번째 학생은 수정 안됨!!!!!!!!!!!!!!!
 						//이거 학번 확인 후 다시 입력칸으로 가게 하면 되지않
-						 * 
-						 * 
-						
+ * 
+ * 
+
  * arrayList 다중배열로 해서 같은 이름이면 같은 배열로 줄줄이 달면??
  * 
- * 
- * 
- * 문제
- * <<정보 수정>>
-학생 이름 : rla
-이름 : rla 국어 : 1 영어 : 2 수학 : 0 총점 : 3 평균 : 1.0 학번 : 4
-이름 : rla 국어 : 5 영어 : 6 수학 : 0 총점 : 11 평균 : 3.6666667 학번 : 7
-학번 검색 : 4
-과목선택 : 1.국어  2.영어 1
-국어 : 100
-숫자 잘못 입력
-
-틀린 학번 예외 추가하기
+ * 전체삭제 기능넣기 clear()? list.remove()?
  * 
  * 
  * 
@@ -173,8 +197,8 @@ fix
 						//이거 학번 확인 후 다시 입력칸으로 가게 하면 되지않
 						//배열 만들까.....
 						//학번 예외
-						
-						
+
+
 						}//3.2 for
 						System.out.print("학번 검색 : ");
 						String name2 = sc.next();
@@ -186,7 +210,9 @@ fix
 								System.out.println("학번 확인 후 학번 입력");
 								System.out.print(list.get(i).toString());
 							}
-							
-							
-							
+
+
+
+
+
  */
