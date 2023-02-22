@@ -1,16 +1,19 @@
 package java_Bclass.team02;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class DnF_ {
 	LinkedList<Student> list = new LinkedList<Student>();
 	Iterator<Student> it = list.iterator();
 	Student stu;
+	DnF_Math dnfM = new DnF_Math();
 
 
 	public void input() {
@@ -54,34 +57,40 @@ public class DnF_ {
 						System.out.println("선택 1.성적일괄수정 2.과목선택 3.이름");
 						int select = sc.nextInt();
 						switch(select) {
+						
 						case 1 :
+							
 							System.out.print("국어 : ");
 							stu.setKor(sc.nextInt());
 							System.out.print("영어 : ");
 							stu.setEng(sc.nextInt());
 							System.out.println("결과");
 							System.out.println(stu.toString());
+							
 							break;
 						case 2 :
 							System.out.println("과목선택 : 1.국어  2.영어 ");
 							int subject = sc.nextInt();					//4-과목 선택
-
-							while(subject !=2) {
+						
+							
 								switch (subject) {
 								case 1: // 국어 
 									System.out.print("국어 : ");
 									stu.setKor(sc.nextInt());
+									System.out.println(stu.toString());
 									break;
 								case 2: // 영어
 									System.out.print("영어 : ");
 									stu.setEng(sc.nextInt());
+									System.out.println(stu.toString());
 									break;
+								default : System.out.println("잘못된 번호 선택 메인으로 감"); break;
 								} break; //switch
-							}// System.out.println("숫자 잘못 입력");//while
+							
 						case 3 :
 							System.out.print("변경할 이름: ");
 							stu.setName(sc.next());
-							System.out.println(stu.toString());
+							System.out.println("이름이 "+name+"에서 "+stu.getName()+"으로 변경되었습니다"); break;
 
 						default : System.out.println("잘못된 번호 선택. 메인으로 나감");
 
@@ -108,16 +117,19 @@ public class DnF_ {
 		boolean accessOK=true;
 		System.out.println("<<정보 삭제>>");
 
-		if (stu == null) { System.out.println("삭제할 내역이 없습니다"); } 	//1-학생 정보 없을 때
+		if (list.isEmpty()) { System.out.println("삭제할 내역이 없습니다"); } 	//1-학생 정보 없을 때
 		else {												//1-학생 정보 있을 때
 			System.out.print("삭제 할 학생명> ");
 			String name = sc.next();
 			it = list.iterator();
 			while(it.hasNext()) {
 				Student stu=it.next();							//2-학생 검색
-
-				if(stu.getName().equals(name)) {				//3-일치하는 이름 있을 때
-
+				
+				//for(int k =0;k<list.size();k++) {
+								//3-일치하는 이름 있을 때
+				//if(list.equals(name)) {
+				
+					if(stu.getName().equals(name)) {
 					while(accessOK) {
 						System.out.println("정말 삭제?");
 						String yn=sc.next();
@@ -128,7 +140,7 @@ public class DnF_ {
 								String password=sc.next();
 
 								if(password.equals("1234")) {	//5-번호 잘 입력됨
-									list.remove(stu);
+									list.remove(stu.getName());
 									System.out.println(stu.getName()+"이 삭제되었습니다"); 
 									accessOK=false; break;
 
@@ -144,6 +156,7 @@ public class DnF_ {
 						}else { System.out.println("다시 입력"); }
 					}	
 				}else System.out.println("해당 학생이 없음"); break;   //3-일치하는 이름 없을 때
+			
 			}
 		}
 	}//delete
@@ -171,6 +184,11 @@ fix
  *
  * 추가필요) 성적점수 범위 설정
  * 		   자꾸 변경할 이름 나옴
+ * 			난수얻기 해서 비밀번호???(유틸 랜덤클래스) 
+ * 			/Random r=new Random();//랜덤클래스 인스턴스화
+			System.out.println(r.nextInt());
+ * 
+ * 알아보기) main에 throws IOException 왜 넣은거임?
  * 		
  * 
  * 
