@@ -14,12 +14,12 @@ public class DnF_ {
 	LinkedList<Student> list = new LinkedList<Student>();
 	Iterator<Student> it = list.iterator();
 	Student stu;
-	//DnF_Mat dnfM = new DnF_Mat();
-
+	
 
 	public void input() {
+		
 		Scanner sc = new Scanner(System.in);
-		stu = new Student(); 
+	    stu = new Student(); 
 		System.out.print("이름 : ");
 		stu.setName(sc.next());
 		System.out.print("국어 : ");
@@ -30,7 +30,46 @@ public class DnF_ {
 		stu.setNum(sc.next());
 		list.add(stu);
 
-	}
+	/*	stu = new Student(); 
+	      boolean flage1 = true;
+	      System.out.print("점수를 등록할 학생 이름을 입력하세요 ");
+	      String search = sc.nextLine();
+	      if ( search == stu.getName() ) { 
+	    	  while(flage1) {
+	    		  System.out.print("국어점수 : ");
+	    	      int kor = sc.nextInt(); //국어
+	    	      	if( kor < 0 | kor > 100){
+	    	        	System.err.println("1~100까지의 숫자만 입력가능합니다"); break;
+	    	        }else if( kor >= 1 | kor <= 100 ) {
+	    	        	stu.setKor( kor );
+	    	        }
+	    	      System.out.print("영어점수 : ");
+	    	      int eng = sc.nextInt(); //영어
+	    	        if( eng < 0 | eng > 100){
+	    	           	System.err.println("1~100까지의 숫자만 입력가능합니다"); break;
+	    	        }else if( eng >= 1 | eng <= 100 ) {
+	    	           	stu.setEng( eng );
+	    	        }
+	    	           
+	    	      System.out.print("수학점수 : ");
+	    	      int math = sc.nextInt();
+	    	        if( math < 0 | math > 100){
+	    	           	System.err.println("1~100까지의 숫자만 입력가능합니다"); break;
+	    	        }else if( math >= 1 | math <= 100 ) {
+	    	        	stu.setMath( math );
+	    	        }list.add(stu); System.out.println("입력 완료되었습니다"); break;
+	    	  
+	    	  	} //end while
+	      } else {
+	    	  System.out.println("등록되지 않은 학생입니다");
+	      }//end if
+	      
+	      
+	  */       
+	    }// end input
+		
+		
+	
 
 	public void output() {
 		for (Student stu : list) {
@@ -38,16 +77,16 @@ public class DnF_ {
 		}
 	}
 
-	//점수 입력시 글자 입력하면 오류남-해결 InputMismatchException try-catch
+	//
 	//이름이 같은 학생은 수정 어떻게 됨?-첫번째 학생만 수정됨/이름이 같으면 목록 나오게 할까? 1번2번 인덱스번호를 골라서 수정
 	//검색하면 이름 같은 학생 명단 출력-학교명 검색-삭제
-	//indexOf????
+	
 	public void fix() {
 		Scanner sc = new Scanner(System.in);
-		if (list.isEmpty()) {	System.out.println("수정할 내역이 없습니다");}	//1-학생 없으면			
+		if (list.isEmpty()) {	System.out.println("저장된 학생정보가 없습니다");}	//1-학생 없으면			
 		else {							//1-학생 있으면
 			System.out.println("<<정보 수정>>");
-			System.out.print("이름 입력 : ");
+			System.out.print("학생이름 입력 : ");
 			String name = sc.next();	//이름입력
 			it = list.iterator();
 			while (it.hasNext()) {					//2-학생 검색 값이 있는지..
@@ -68,7 +107,7 @@ public class DnF_ {
 							stu.setKor(sc.nextInt());
 							System.out.print("영어 : ");
 							stu.setEng(sc.nextInt());
-							System.out.println("결과");
+							System.out.print("결과> ");
 							System.out.println(stu.toString());
 
 							break;
@@ -81,11 +120,13 @@ public class DnF_ {
 							case 1: // 국어 
 								System.out.print("국어 : ");
 								stu.setKor(sc.nextInt());
+								System.out.print("결과> ");
 								System.out.println(stu.toString());
 								break;
 							case 2: // 영어
 								System.out.print("영어 : ");
 								stu.setEng(sc.nextInt());
+								System.out.print("결과> ");
 								System.out.println(stu.toString());
 								break;
 
@@ -104,9 +145,9 @@ public class DnF_ {
 					} catch(InputMismatchException e) {System.err.println("숫자만 입력하세요"); }
 
 
+						
 
-
-				}//if3 - 여기에 else 넣으면 오류난다........
+				}else System.out.println("일치하는 학생이 없습니다");break;//if3 - 여기에 else 넣으면 오류난다........
 				//3-일치하는 이름 없을 때
 
 
@@ -129,7 +170,7 @@ public class DnF_ {
 			switch(s) {
 
 			case 1: 
-				System.out.print("삭제 할 학생명> ");
+				System.out.print("삭제 할 학생이름> ");
 				String name = sc.next();
 				it = list.iterator();
 				while(it.hasNext()) {
@@ -140,7 +181,7 @@ public class DnF_ {
 					//if(list.equals(name)) {
 
 					if(stu.getName().equals(name)) {
-						System.out.println("정말 삭제?");
+						System.out.println(name+"학생 정보를 정말 삭제하시겠습니까?");
 						String yn=sc.next();
 						while(accessOK) {
 
@@ -152,59 +193,58 @@ public class DnF_ {
 
 									if(password.equals("1234")) {	//5-번호 잘 입력됨
 										list.remove(stu);//********
-										System.out.println(stu.getName()+"이 삭제되었습니다"); 
+										System.out.println(stu.getName()+"학생정보가 삭제되었습니다"); 
 										accessOK=false; break;
 
 									}else {							//5-번호 틀림
 										if(i==3) {System.err.println("접속거부"); accessOK=false;}			//6-3번 틀림	
-										else System.out.println("비번 틀렸음"+(3-i)+"회 남음 다시입력"); 	//6-n(n<3) 틀림
+										else System.out.println("비밀번호가 틀렸습니다. 다시 입력해주세요 ( "+(3-i)+" 회 남았습니다"); 	//6-n(n<3) 틀림
 									} 
-								}
+								}//for(int i=1;i<=3;i++)
 
 							}else if(yn.equalsIgnoreCase("n")) {	  //4-n입력
-								System.out.println("프로그램 종료"); accessOK=false; break;
+								System.out.println("삭제 프로그램을 종료하고 메인화면으로 나갑니다"); accessOK=false; break;
 
-							}else { System.out.println("다시 입력"); break; }
+							}else { System.out.println("다시 입력해주세요"); break; }
 						}//while(accessOK)
 					} //if(stu.getName().equals(name))
 
 				}//while
+				break;
 
 			case 2: //전체삭제
-				System.out.println("정말 삭제?");
+				System.out.println("전체삭제 하시겠습니까?(Y/N)");
 				String yn=sc.next();
 
-				if(yn.equalsIgnoreCase("y")) {			//4-y입력
-					//for(int i=1;i<=3;i++) {
-					System.out.println("관리자 번호를 입력하세요");
-					String password=sc.next();
+				if(yn.equalsIgnoreCase("y")) {			
 					
-					if(password.equals("1234")) {	//5-번호 잘 입력됨
-						System.out.println("다음문구 입력 : 학생전체삭제 확인");
+					System.out.println("관리자 비밀번호를 입력하세요");
+					String password=sc.next();
+
+					if(password.equals("1234")) {	
+						System.out.println("다음 문구를 입력하시오 : 학생전체삭제확인합니다");
 						String check=sc.next();
-						if(check.equals("학생전체삭제확인")) {
-							
+						if(check.equals("학생전체삭제확인합니다")) {
+
 							list.clear();//********
 							System.out.println("모두 삭제되었습니다"); 
 							break;	
-						}else System.out.println("문구 잘못입력"); break;
-
-						
-					} else System.out.println("틀림"); break;
-				
-				//else System.out.println("비번 틀렸음"+(3-i)+"회 남음 다시입력"); 	//6-n(n<3) 틀림
-				//} 
-				//	}//for
-
-			}else if(yn.equalsIgnoreCase("n")) {	  //4-n입력
-				System.out.println("프로그램 종료"); accessOK=false;
-
-			}else { System.out.println("다시 입력"); break; } break;
+						}else System.out.println("확인문구를 잘못 입력하였습니다"); break;
 
 
-		case 3: System.out.println("실행취소 "); break;//취소
-		default : System.err.println("잘못된 번호 선택. 메인으로 나감"); break;
-		}//switch
+					} else System.out.println("비밀번호가 일치하지 않습니다"); break;
+
+					
+
+				}else if(yn.equalsIgnoreCase("n")) {	  //4-n입력
+					System.out.println("프로그램 종료"); accessOK=false;
+
+				}else { System.out.println("다시 입력"); break; } break;
+
+
+			case 3: System.out.println("실행취소: 메인 화면으로 나갑니다 "); break;//취소
+			default : System.err.println("잘못된 번호를 선택하였습니다. 메인 화면으로 돌아갑니다"); break;
+			}//switch
 		}
 
 	}//delete
@@ -217,6 +257,7 @@ fix
 -학생목록 없으면 '수정할 내역 없다'고 뜨게함
 -학생이름 입력 후 과목 선택시 문자를 입력하면 예외로 넘겨서 '숫자만 입력'하라고 뜨게 함
 -과목 선택시 숫자 잘못입력하면 초기화면으로 돌아감
+-점수 입력시 글자 입력하면 오류남-해결 InputMismatchException try-catch		
  *문제: 학생 이름 같을 경우 삭제, 수정은 먼저 입력된 학생만 됨
  */
 /*
@@ -235,7 +276,7 @@ fix
 			System.out.println(r.nextInt());
  * 
  * 알아보기) main에 throws IOException 왜 넣은거임?
- * 		
+ * 
  * 
  * 
  * 
