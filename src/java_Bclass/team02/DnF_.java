@@ -141,6 +141,7 @@ public class DnF_ {
 
 								if(password.equals("1234")) {	//5-번호 잘 입력됨
 									list.remove(stu.getName());
+									
 									System.out.println(stu.getName()+"이 삭제되었습니다"); 
 									accessOK=false; break;
 
@@ -187,6 +188,7 @@ fix
  * 			난수얻기 해서 비밀번호???(유틸 랜덤클래스) 
  * 			/Random r=new Random();//랜덤클래스 인스턴스화
 			System.out.println(r.nextInt());
+			삭제에서 모든 정보 삭제 -이거 난수 쓰면 되겠다
  * 
  * 알아보기) main에 throws IOException 왜 넣은거임?
  * 		
