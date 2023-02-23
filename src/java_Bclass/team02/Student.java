@@ -44,7 +44,9 @@ public class Student {
 	                + this.getMath() + " ÃÑÁ¡ : " + this.getTotal() + " Æò±Õ : " + this.getAvg() + " ÇÐ¹ø : " + this.getNum()+"\n";
 	    }
 	    
-		
+	    public static String charToString(char ch) {
+	        return String.valueOf(ch);
+	    }
 		
 	}
 
