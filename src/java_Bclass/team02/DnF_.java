@@ -26,46 +26,13 @@ public class DnF_ {
 		stu.setKor(sc.nextInt());
 		System.out.print("영어 : ");
 		stu.setEng(sc.nextInt());
+		System.out.print("수학 : ");
+		stu.setMath(sc.nextInt());
 		System.out.print("학번 : ");
 		stu.setNum(sc.next());
 		list.add(stu);
 
-	/*	stu = new Student(); 
-	      boolean flage1 = true;
-	      System.out.print("점수를 등록할 학생 이름을 입력하세요 ");
-	      String search = sc.nextLine();
-	      if ( search == stu.getName() ) { 
-	    	  while(flage1) {
-	    		  System.out.print("국어점수 : ");
-	    	      int kor = sc.nextInt(); //국어
-	    	      	if( kor < 0 | kor > 100){
-	    	        	System.err.println("1~100까지의 숫자만 입력가능합니다"); break;
-	    	        }else if( kor >= 1 | kor <= 100 ) {
-	    	        	stu.setKor( kor );
-	    	        }
-	    	      System.out.print("영어점수 : ");
-	    	      int eng = sc.nextInt(); //영어
-	    	        if( eng < 0 | eng > 100){
-	    	           	System.err.println("1~100까지의 숫자만 입력가능합니다"); break;
-	    	        }else if( eng >= 1 | eng <= 100 ) {
-	    	           	stu.setEng( eng );
-	    	        }
-	    	           
-	    	      System.out.print("수학점수 : ");
-	    	      int math = sc.nextInt();
-	    	        if( math < 0 | math > 100){
-	    	           	System.err.println("1~100까지의 숫자만 입력가능합니다"); break;
-	    	        }else if( math >= 1 | math <= 100 ) {
-	    	        	stu.setMath( math );
-	    	        }list.add(stu); System.out.println("입력 완료되었습니다"); break;
-	    	  
-	    	  	} //end while
-	      } else {
-	    	  System.out.println("등록되지 않은 학생입니다");
-	      }//end if
-	      
-	      
-	  */       
+	
 	    }// end input
 		
 		
@@ -83,19 +50,19 @@ public class DnF_ {
 	
 	public void fix() {
 		Scanner sc = new Scanner(System.in);
-		if (list.isEmpty()) {	System.out.println("저장된 학생정보가 없습니다");}	//1-학생 없으면			
-		else {							//1-학생 있으면
+		if (list.isEmpty()) {	System.out.println("저장된 학생정보가 없습니다");}		
+		else {							
 			System.out.println("<<정보 수정>>");
 			System.out.print("학생이름 입력 : ");
-			String name = sc.next();	//이름입력
+			String name = sc.next();	
 			it = list.iterator();
-			while (it.hasNext()) {					//2-학생 검색 값이 있는지..
+			while (it.hasNext()) {					
 				Student stu = it.next();
 
 
 
 
-				if (stu.getName().equals(name)) { //3-일치하는 이름 있을 때 (Student st : list)
+				if (stu.getName().equals(name)) { 
 					try {		//문자를 입력할 경우예외처리	
 						System.out.println("선택 1.성적일괄수정 2.과목선택 3.이름");
 						int select = sc.nextInt();
@@ -107,12 +74,14 @@ public class DnF_ {
 							stu.setKor(sc.nextInt());
 							System.out.print("영어 : ");
 							stu.setEng(sc.nextInt());
+							System.out.print("수학 : ");
+							stu.setMath(sc.nextInt());
 							System.out.print("결과> ");
 							System.out.println(stu.toString());
 
 							break;
 						case 2 :
-							System.out.println("과목선택 : 1.국어  2.영어 ");
+							System.out.println("과목선택 : 1.국어  2.영어 3.수학 ");
 							int subject = sc.nextInt();					//4-과목 선택
 
 
@@ -129,6 +98,12 @@ public class DnF_ {
 								System.out.print("결과> ");
 								System.out.println(stu.toString());
 								break;
+							case 3: // 수학
+								System.out.print("수학 : ");
+								stu.setMath(sc.nextInt());
+								System.out.print("결과> ");
+								System.out.println(stu.toString());
+								break;	
 
 							} break;
 
@@ -147,11 +122,12 @@ public class DnF_ {
 
 						
 
-				}else System.out.println("일치하는 학생이 없습니다");break;//if3 - 여기에 else 넣으면 오류난다........
+				}System.out.println("일치하는 학생이 없습니다");break;//if3 - 여기에 else 넣으면 오류난다........
 				//3-일치하는 이름 없을 때
 
 
-			}//while
+			} //while
+			
 		}//else1
 	}//fix
 
