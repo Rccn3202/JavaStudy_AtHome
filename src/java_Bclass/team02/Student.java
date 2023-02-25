@@ -7,7 +7,7 @@ public class Student {
 	    private int math;
 	    private int total;
 	    private float avg;
-	    private String num;
+	    
 	 
 	    public String getName() { return name;}
 	    public void setName(String name) { this.name = name; }
@@ -17,8 +17,7 @@ public class Student {
 	    public void setEng(int eng) { this.eng = eng;  }
 	    public int getMath() { return math; }
 	    public void setMath(int math) { this.math = math; }
-	    public String getNum() { return num;}
-	    public void setNum(String num) { this.num = num; }
+	   
 	
 	    public int getTotal() {
 	        total = kor + math + eng;
@@ -41,7 +40,7 @@ public class Student {
 	    @Override
 	    public String toString() {
 	        return "ÀÌ¸§ : " + this.getName() + " ±¹¾î : " + this.getKor() + " ¿µ¾î : " + this.getEng() + " ¼öÇÐ : "
-	                + this.getMath() + " ÃÑÁ¡ : " + this.getTotal() + " Æò±Õ : " + this.getAvg() + " ÇÐ¹ø : " + this.getNum()+"\n";
+	                + this.getMath() + " ÃÑÁ¡ : " + this.getTotal() + " Æò±Õ : " + this.getAvg() +"\n";
 	    }
 	    
 	    public static String charToString(char ch) {
