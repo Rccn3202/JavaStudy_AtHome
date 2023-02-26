@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class DnF_ {
+public class DnF {
 	LinkedList<Student> list = new LinkedList<Student>();
 	Iterator<Student> it = list.iterator();
 	Student stu;
@@ -28,8 +28,7 @@ public class DnF_ {
 		stu.setEng(sc.nextInt());
 		System.out.print("수학 : ");
 		stu.setMath(sc.nextInt());
-		System.out.print("학번 : ");
-		stu.setNum(sc.next());
+		
 		list.add(stu);
 
 	
@@ -167,7 +166,7 @@ public class DnF_ {
 									System.out.println("관리자 번호를 입력하세요");
 									String password=sc.next();
 
-									if(password.equals("1234")) {	//5-번호 잘 입력됨
+									if(password.equals(password)) {	//5-번호 잘 입력됨
 										list.remove(stu);//********
 										System.out.println(stu.getName()+"학생정보가 삭제되었습니다"); 
 										accessOK=false; break;

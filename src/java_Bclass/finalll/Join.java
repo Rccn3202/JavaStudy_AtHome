@@ -1,4 +1,4 @@
-package java_Bclass.team02F;
+package java_Bclass.finalll;
 
 public class Join {
 	private String id = null;
@@ -6,6 +6,7 @@ public class Join {
 	private String inputId;
 	private String inputPw;
 	private String securityNum = "1234";
+	
 	
 	public String getSecurityNum() {
 		return securityNum;
