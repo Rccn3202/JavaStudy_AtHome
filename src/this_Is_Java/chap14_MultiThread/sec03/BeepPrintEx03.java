@@ -1,6 +1,6 @@
-package chap12_javabaseModules.example;
+package chap14_MultiThread.sec03;
 
-public class DecodingEx {
+public class BeepPrintEx03 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
