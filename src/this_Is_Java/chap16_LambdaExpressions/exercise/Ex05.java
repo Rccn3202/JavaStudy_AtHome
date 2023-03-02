@@ -1,6 +1,6 @@
-package chap14_MultiThread.sec05;
+package chap16_LambdaExpressions.exercise;
 
-public class WorkThreaad {
+public class Ex05 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

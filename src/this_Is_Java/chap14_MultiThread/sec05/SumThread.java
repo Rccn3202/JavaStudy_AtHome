@@ -1,10 +1,25 @@
 package chap14_MultiThread.sec05;
 
-public class SumThread {
+public class SumThread extends Thread {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		private long sum;
+
+		public long getSum() {
+			return sum;
+		}
+
+		public void setSum(long sum) {
+			this.sum = sum;
+		}
+		
+		@Override
+		public void run() {
+		for(int i=0; i<=100 ; i++) {
+			sum+=i;
+		}
+		}
+		
 
 	}
 
-}
+
