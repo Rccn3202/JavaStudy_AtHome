@@ -11,7 +11,7 @@ public class MethodReferenceEx01 {
 		person.action(Computer :: staticMethod);
 		
 		//인스턴스 메소드일 경우
-		Computer com = new Computer();
+		Computer com = new Computer();	//Computer객체 생성(com)
 		//람다식
 		person.action((x,y) -> com.instanceMethod(x, y));
 		//메소드 참조

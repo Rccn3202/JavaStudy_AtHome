@@ -13,13 +13,13 @@ public class LambdaEx {
 		//리턴문이 하나만 있을 경우(연산식)
 		//person.action((x, y) -> {
 		//return (x + y);
-		//});
+		//});							이것을 아래와 같이 줄일 수 있다.
 		person.action((x,y) -> (x+y));
 		
 		//리턴문이 하나만 있을 경우(메소드 호출)
 		//person.action((x,y) -> {
 		//return sum(x,y);
-		//});
+		//});							이것을 아래와 같이 줄일 수 있다.
 		person.action((x,y) -> sum(x,y));
 	}
 	

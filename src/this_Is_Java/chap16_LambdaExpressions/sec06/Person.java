@@ -1,7 +1,7 @@
 package chap16_LambdaExpressions.sec06;
 
 public class Person {
-	public Member getMember1(Creatable1 creatable) {
+	public Member getMember1(Creatable1 creatable) {	//매개변수 선언 : creatable
 		String id = "winter";
 		Member member = creatable.create(id);
 		return member;
