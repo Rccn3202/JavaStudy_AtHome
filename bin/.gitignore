@@ -5,4 +5,8 @@
 /chap14_MultiThread/
 /chap15_Collection/
 /chap16_LambdaExpressions/
+<<<<<<< HEAD
 /chap17_Stream/
+=======
+/chap14_MultiThread/
+>>>>>>> 850755e1e83e9b704300bcffe9b9ecac4146113c

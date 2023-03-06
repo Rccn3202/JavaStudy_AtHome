@@ -1,0 +1,161 @@
+생활코딩 정리(HTML)
+
+2023.02.08.수
+O 기술소개
+HyperText : 하이퍼텍스트를 가장 중요한 특징으로 하는
+Markup : 마크업이라는 형식을 가진
+Language : 컴퓨터 프로그래밍 언어
+
+O 기본문법
+(확장자 / 태그 / 속성)
+-html이 제일 쉽다
+-[.html] : 확장자
+-<strong> </strong> : 이런게 태그( <> 시작태그  </> 닫히는 태그)
+
+O 하이퍼텍스트(링크)와 속성
+href , target 등등
+-속성이라고 한다
+-속성의 이름에 따라 기능이 정해져있다
+-순서 상관 없음,
+-태그 안에 계속 적으면 됨 <a target=" " href=" " title=" " .....> </a>
+
+O 태그의 중첩과 목록
+-태그 안에 또다른 태그 존재할 수 있다. <ul><li> </li></ul>
+
+O 문서의 구조(html / head / body)
+-<html> : 가장 밖에 있는 태그
+-<title>태그 등등 : 문서 자체를 꾸며주는 부가적인 정보  <head>로 묶어준다
+-<h1>태그 : 본문 <body>로 묶어준다
+
+O DOCTYPE (document type declaration)
+-어떤 태그를 작성했을 떄, 이 태그가 어떤 버전 html 표준에 따르고 있는지 알리는 태그
+-그냥 <!DOCTYPE html> 이거 쓰면 됨
+
+O 웹사이트 만들기
+-각 항목에 링크 걸기 실습
+(*링크 파일 만들기 전에 메인파일에 링크부터 지정해 놓는게 더 편함)
+-웹페이지 소스보기 해보기
+
+O 변천사와 통계
+html 태그 변천사>
+http://www.martinrinehart.com/frontend-engineering/engineers/html/html-tag-history.html
+
+O 단락 : p태그 (paragraph)
+<p>단락 구분</p>
+
+단락 바꾸는 방법
+1) br태그 - 줄바꿈
+2) p태그 - 단락만들기 / 줄바꿈 간격이 고정되어있다
+
+
+O 줄바꿈 : br (a forced line-break)
+줄바꿈<br>
+
+-void elements로 닫힘 태그 안쓴다.
+-단락 끝에 붙이면 한줄 띈다
+-실제로 단락을 구분지을 때는 p태그를 쓴다
+-br태그는 줄바꿈 n번 해라 할 때 사용
+-단락 간격 조정하고 싶을 때는 css를 활용해서 p태그를 조정하는 것이 낫다
+
+O 이미지 : img
+<img src="이미지파일명" width="이미지크기" height="이미지 높이" alt="이미지 설명" title="도움말"></img>
+
+=만약 width 입력하지 않고 height만 작성하면 이미지 높이에 맞춰 이미지 크기가 정해진다
+=alt(alternative text) 
+-이미지가 깨졌을 경우 대체제
+-이미지가 깨진 경우 아이콘과 함께 alt에 작성한 내용이 표시된다
+-꼭 쓰는 것이 좋다
+=title : 이미지 위에 마우스를 올려놓으면 설명(도움말)이 나옴
+
+<<<<<<< HEAD
+=======
+2023.02.09.목
+O표
+1. 기분
+
+
+O
+
+O
+
+O
+
+O
+
+O
+
+O
+
+>>>>>>> 9dec55382eab39418e6e6a38b63341a2396558b2
+
+
+**********태그 정리**********
+<h1>제목</h1>    //heading
+<h2>소제목</h2>
+<strong>굵은글씨</strong>
+<a>이 문자에 링크가 걸려있다</a>    //anchor
+* <a href="링크 주소">  : 링크주소 걸기
+* <a href="링크 주소" target="_blank"> : 링크를 열 때 새 창에 열기
+
+<li>목차(큰 점 생김)</li>   //list
+<ul>그루핑 효과</ul>     //unordered list
+<ol>순서있는 그루핑(목차에 번호 붙음)</ol>  //ordered list
+
+<title>탭 제목</title>
+* 만약 글씨가 깨지는 경우 <meta charset="utf-8"> 적어준다
+<head>문서자체, 부가적인 내용</head> : title과 meta 태그는 반드시 head태그 밑에 놓는다
+<body> 본문</body> : h1, ol 등은 body태그 밑에 있다
+<html> head와 body </html> : 가장 밖에 html 태그를 둔다
+
+<!DOCTYPE html> : html 표준 선언
+
+<button>네모버튼</button>
+
+<p>단락 구분</p>
+
+줄바꿈<br>
+
+<img src="이미지파일명" width="이미지크기" height="이미지 높이" alt="이미지 설명" title="도움말"></img>
+
+<<<<<<< HEAD
+
+
+=======
+<td>테이블 한 칸의 내용</td> //table data  : 표 각각의 실제 데이터
+*<td>이름</td> <td>성별</td><td>나이</td>  ->표 3칸 나온다
+
+<tr>같은행에 속하는 <td>테이블 묶어준다</tr>  //table row
+>>>>>>> 9dec55382eab39418e6e6a38b63341a2396558b2
+
+
+
+*********************
+주로 쓰는 태그
+head /html
+title
+body (bgcolor)
+a (href, target)
+img (src, width, height, border, alt)
+meta (content, http-equiv, name)
+br - 줄바꿈
+table(border, width - 표
+td
+tr
+p - 단락 구분
+script - 자바 스크립트 쓸 때 씀
+div - 웹페이지 꾸밀 때 그루핑
+b
+font
+link/ form/ input
+
+
+
+<<<<<<< HEAD
+=======
+html 컬러차트
+https://html-color-codes.info/Korean/
+>>>>>>> 9dec55382eab39418e6e6a38b63341a2396558b2
+
+
+
+
