@@ -8,6 +8,18 @@ id/class 차이
 id : 스타일을 지정할 때 한가지만 지정해서 쓰는 이름 css에서 #이름으로 사용, 하나의 문서에 고유한 id 하나만 있음
 class : 그룹으로 묶어서 스타일을 지정할 때 쓰는 이름 css에서 .이름
 
+<UL>, <LI> 리스트의 점 없애기
+불릿 없애기 + 들여쓰기 없애기
+<style>
+ul{
+   list-style:none;
+   padding-left:0px;
+   }
+</style>
+
+가운데정렬
+<div align="center" >
+
 
 
 -----
