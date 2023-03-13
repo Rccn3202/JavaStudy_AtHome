@@ -8,6 +8,75 @@
     <link rel="stylesheet" type="text/css" href="findstore01.css">
 </head>
 <body>
+    <div class="search_boxes">
+        <div class="search_box">
+          <select name="" id="" onchange="categoryChange(this)">
+            <option value>시/도 선택</option>
+            <option value="general01">강원</option>
+            <option value="general02">경기</option>
+            <option value="general03">경남</option>
+            <option value="general04">경북</option>
+            <option value="general05">광주</option>
+            <option value="general06">대구</option>
+            <option value="general07">대전</option>
+            <option value="general08">부산</option>
+            <option value="general09">서울</option>
+            <option value="general10">울산</option>
+            <option value="general11">인천</option>
+            <option value="general12">전남</option>
+            <option value="general13">전북</option>
+            <option value="general14">제주</option>
+            <option value="general15">충남</option>
+            <option value="general16">충북</option>
+          </select>
+        </div>
+        
+        <div class="search_box">
+          <select name="" id="state">
+            <option>군/구 선택</option>
+          </select>
+        </div>
+        
+    <div class="search" style="width: 560px;"> <!--매장명 검색-->
+        <input type="text" name="subject" id="subject" placeholder="매장명 또는 주소 입력" >
+        <img src="../Image/돋보기.png"
+        </div>
+
+    </div>
+
+    </div>
+
     
+
+    <div class="list"><!---왼쪽 위치 선택-->
+        <form action='login_page.php'>
+            <input type='button' value='미사1'/>
+          </form>
+    </div>
+    
+    <div ><!--지도--->
+        <style>
+            #map{
+                width: 100%;
+                height: 400px;
+            }
+        </style>
+       <button onclick="map1()">map1</button> 
+       <button onclick="map2()">map2</button> 
+        
+
+    </div>
 </body>
-</html>
+<script src="./findstore01.js"></script>
+ <!--구글 지도 api 사용 스크립트 추가-->
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZsBDHvZ-UBFnTDa8qOXK2mFyE-WG9FlA&callback=initMap"async defer"></script>
+<script>
+    function map1(){
+        //지도가 보여질 요소 찾아오기
+        var e=document.getElementById('map');
+        //구글지고 객체 생성 및 e요소 보여주기
+        new google.maps.Map(e, {center:{lat:37.562161, lng:127.035199},zoom:14});
+    }
+
+</script>
+ </html>
