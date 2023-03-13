@@ -30,8 +30,24 @@ https://velog.io/@vrdd/Vertex-AI-Hello-%EC%BB%A4%EC%8A%A4%ED%85%80-%ED%95%99%EC%
 http://jaymz96.blogspot.com/2016/11/0-api.html
 https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=ko
 https://mainia.tistory.com/2404
+https://www.daleseo.com/google-maps-api/
+https://popcorn16.tistory.com/124
+
+가장 안전한 방법은 API 키를 사용한 후 API 키를 삭제해버리시는 것일 겁니다. 🚮
+
 
 공차 주소 1 37.56861,127.1852706
+
+버튼 꾸미기
+https://www.freecodecamp.org/korean/news/css-beoteun-seutail-hover-color-background/
+https://inpa.tistory.com/entry/CSS-%F0%9F%92%8D-%EB%B2%84%ED%8A%BC-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%AA%A8%EC%9D%8C
+버튼에 링크를 걸려면 <a href ="#">을 쓰면 안되구요. 
+버튼 태그안에 onclick = "location.href = '#' "을 넣어줘야 해요.
+ex)<button type="button" onclick="location.href='joinUs.jsp' ">회원가입</button>
+https://hongku.tistory.com/300
+https://hianna.tistory.com/751
+https://coding-factory.tistory.com/187
+https://hianna.tistory.com/747
 
 
 검색창 만들기

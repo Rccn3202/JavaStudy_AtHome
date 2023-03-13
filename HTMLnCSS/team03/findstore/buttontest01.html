@@ -1,0 +1,54 @@
+<!DOCTYPE html><!--옆에 매장리스트 버튼, 색깔변화/이벤트는 안했음-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--margin으로 버튼사이 간격 없애기-->
+
+    <style>
+#test1{
+margin-right:-4px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+#test6{
+margin-right:-4px;
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+#buttongroup button{
+    border:1px solid skyblue;
+    background-color: rgba(0, 0, 0, 0);
+    color: skyblue;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+}
+#buttongroup button:focus{
+    color:white;
+    background-color: skyblue;
+}
+
+    </style>
+</head>
+    <body>
+<div id="buttongroup">
+    <button id="test1">테스트1</button>
+    <br>
+    <button id="test2">테스트2</button>
+    <br>
+    <button id="test3">테스트1</button>
+    <br>
+    <button id="test4">테스트2</button>
+    <br>
+    <button id="test5">테스트1</button>
+    <br>
+    <button id="test6">테스트2</button>
+    
+</div>
+
+    </body>
+</html>
+    

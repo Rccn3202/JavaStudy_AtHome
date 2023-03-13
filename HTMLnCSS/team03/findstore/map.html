@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>맵 API</title>
+
+<!--지도 스타일-->
 <style type="text/css">
- 
     *{
         margin: 5px;
         padding: 5px;
@@ -14,17 +15,19 @@
         width: 500px;
         height: 300px;
     }
- 
 </style>
+
+<!--구글지도 불러오기-->
 <!-- <script src="http://maps.google.com/maps/api/js?key=자기가발급한키를입력&region=kr"></script> -->
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyCYd2psRhW_KtdwdIBQHpK_jCGCdZsHRNY&region=kr"></script>
 </head>
  
+
 <body>
     <div id="map"></div>
     <button id="btn1">지도 변경1</button>
     <button id="btn2">지도 변경2</button>
-    <button id="btn3">거리뷰</button>
+    
     
     <script type="text/javascript">
         
@@ -39,7 +42,7 @@
         
         
         var map;
-        // 지도 출력
+        // 지도 출력 Google Maps API를 사용하여 지도를 생성하는 initMap 함수
         function initMap(){
             // 위치데이터 경도, 위도로 구성된 jso 파일은 항상 이런식으로 구성되어있다.
             var ll = {lat: 37.56861, lng: 127.1852706};
@@ -47,17 +50,20 @@
                     document.getElementById("map"),
                     {zoom: 17, center: ll}
                     );
+                    //마커로 위치 표시
             new google.maps.Marker(
                 {position: ll,
                     map: map,
-                    label: "현재 위치"}        
+                    label: "뭐라고 써야돼"}        
             );
         }
         initMap(); // 맵 생성
         
         // 지도의 중심을 변경하는 작업
+        //버튼1을 클릭하면 실행되는 함수로, map.panTo() 메소드를 사용하여 해당 좌표로 이동하며, 
+        //map.setZoom() 메소드를 사용하여 줌 레벨을 조정
         function changeMap1(){
-            var ll = {lat:37.56861, lng: 127.1852706};
+            var ll = {lat:37.56861, lng: 127.1852706};//공차
             map.panTo(ll);
             map.setZoom(16);
         } 
