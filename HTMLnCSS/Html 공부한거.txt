@@ -89,6 +89,7 @@ https://jineecode.tistory.com/81
 js파일 분리해서 html에 불러오기
 <script src="./findstore01.js">
 https://opentutorials.org/course/1375/6620
+async : https://blogpack.tistory.com/1087
 
 
 2. for in 문: 객체의 프로퍼티 키 열거 전용

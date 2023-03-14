@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+#store1{
+    margin-right:-4px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#store6{
+    margin-right:-4px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#storeList button{
+    border:1px solid black;
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+}
+#storeList button:focus{
+    color:gainsboro;
+    background-color: gray;
+}
+    </style>
+</head>
+
+<body>
+    <div class="searchBoxes">
+        <div class="searchBox">
+            <select id="citygroup1" name="" onchange="citycategoryChange(this)">
+            <option value>시/도 선택</option>
+            <option value="city01">도시1</option>
+            <option value="city02">도시2</option>
+            <option value="city03">도시3</option>
+            <option value="city04">도시4</option>
+            </select>
+        </div>
+    
+        <div clss="searchBox">
+            <select id="citygroup2"  name="" >
+                <option>군/구 선택</option>
+            </select>
+        </div>
+    
+        <div class="search" style="width: 560px;"> <!--매장명 검색-->
+            <input type="text" name="subject" id="subject" placeholder="매장명 또는 주소 입력" >
+            <img src="../Image/돋보기.png" >
+        </div>
+    </div>
+
+
+
+<div id="storeList">
+    <button id="store1">매장1</button><br>
+    <button id="store2">매장2</button><br>
+    <button id="store3">매장3</button><br>
+    <button id="store4">매장4</button><br>
+    <button id="store5">매장5</button><br>
+    <button id="store6">매장6</button><br>
+</div>
+
+
+    
+</body>
+<script src="../findstore/group01.js" async></script>
+</html>
